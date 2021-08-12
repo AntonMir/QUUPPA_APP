@@ -4,8 +4,6 @@ import Login from '@components/authPage/elements/Login.js'
 import Register from '@components/authPage/elements/Register.js'
 // redux
 import { store } from '@store/store.js'
-// img
-import background from '@img/welcome/welcome_background.png'
 /// styled
 import styled from 'styled-components'
 
@@ -44,10 +42,6 @@ export default function AuthPage() {
 }
 
 const AuthPageStyled = styled.div`
-    background-image: url(${background});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     margin: 0;
     padding: 5%;
     height: calc(100vh - 80px);

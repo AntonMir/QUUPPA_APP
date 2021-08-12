@@ -41,21 +41,36 @@ const NavList = styled.ul`
 `
 
 const NavEl = styled.li`
-    border: #000 1px solid;
     padding: 10px 20px;
     margin: 0 5px;
     cursor: pointer;
     user-select: none;
     white-space: nowrap;
-    &:hover {
-        background-color: rgb(94, 94, 94);
-    }
-    &:active {
-        background-color: rgb(124, 124, 124);
-    }
 `
 
 const CustomLink = styled(Link)`
-    text-decoration: none;
+    position: relative;
     color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    &:before,
+    &:after {
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        width: 0;
+        border-bottom: 3px solid #091f2c;
+        content: '';
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        &:before,
+        &:after {
+            width: 50%;
+            border-bottom: 3px solid #00b5d6;
+        }
+        &:after {
+            transform: translateX(-98%);
+        }
+    }
 `

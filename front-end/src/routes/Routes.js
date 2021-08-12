@@ -3,26 +3,27 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 // components
 import AuthPage from '@authPage/AuthPage.js'
-import WelcomePage from '@components/welcomePage/Welcome.js'
-import Content from '@content/Content.js'
+import MainPage from '@mainPage/MainPage.js'
+import UserPage from '@userPage/UserPage.js'
 
 const useRoutes = (isAuthenticated) => {
     if (isAuthenticated) {
         // это для человека, который зашел в систему
         return (
             <Switch>
-                <Route exact path="/map" component={Content} />
+                <Route exact path="/" component={MainPage} />
+                <Route exact path="/user" component={UserPage} />
                 {/* <Route exact path="/links" component={LinksPage}/>
                 <Route exact path="/create" component={CreatePage}/>
                 <Route path="/detail/:id" component={DetailPage}/> */}
-                <Redirect to="/map" />
+                <Redirect to="/" />
             </Switch>
         )
     }
 
     return (
         <Switch>
-            <Route exact path="/" component={WelcomePage} />
+            <Route exact path="/" component={MainPage} />
             <Route exact path="/auth" component={AuthPage} />
             <Redirect to="/" />
         </Switch>

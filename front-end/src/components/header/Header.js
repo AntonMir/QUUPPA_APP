@@ -27,6 +27,7 @@ export default function Header() {
     return (
         <HeaderStyled>
             <Logo />
+            <Nav />
             <AuthBtns />
         </HeaderStyled>
     )
@@ -39,7 +40,7 @@ const HeaderStyled = styled.div`
     align-items: center;
     justify-content: space-between;
     color: #fff;
-    background-color: #292929;
+    background-color: #091f2c;
     height: 80px;
     padding: 0 3%;
 `
