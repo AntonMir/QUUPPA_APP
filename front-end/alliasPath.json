@@ -13,6 +13,7 @@
             "@footer": ["src/components/footer"],
             "@header": ["src/components/header"],
             "@authPage": ["src/components/authPage"],
+            
             "@mainPage": ["src/components/mainPage"],
             "@userPage": ["src/components/userPage"],
             "@routes": ["src/routes"]

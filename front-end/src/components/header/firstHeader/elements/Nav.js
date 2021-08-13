@@ -9,17 +9,14 @@ export default function Nav() {
         <NavStyled>
             <NavList>
                 <NavEl className="header-nav-el">
-                    <CustomLink to="/">Главная</CustomLink>
+                    <CustomLink to="/">Customer Support</CustomLink>
                 </NavEl>
                 <NavEl className="header-nav-el">
-                    <CustomLink to="/">Статистика</CustomLink>
+                    <CustomLink to="/">Contuct Us</CustomLink>
                 </NavEl>
                 <NavEl className="header-nav-el">
-                    <CustomLink to="/">Карты</CustomLink>
+                    <CustomLink to="/">Careers</CustomLink>
                 </NavEl>
-                {/* <NavEl className="header-nav-el">
-                    <Link to="/">Финансовый календарь</Link>
-                </NavEl> */}
             </NavList>
         </NavStyled>
     )
@@ -29,7 +26,7 @@ const NavStyled = styled.div`
     display: flex;
     justify-content: flex-end;
     flex: 1;
-    margin: 0 30px;
+    margin: 0 10px;
 `
 
 const NavList = styled.ul`
@@ -50,27 +47,6 @@ const NavEl = styled.li`
 
 const CustomLink = styled(Link)`
     position: relative;
-    color: #fff;
-    font-weight: bold;
+    color: #000;
     cursor: pointer;
-    &:before,
-    &:after {
-        position: absolute;
-        bottom: -1px;
-        left: 50%;
-        width: 0;
-        border-bottom: 3px solid #091f2c;
-        content: '';
-        transition: all 0.3s ease;
-    }
-    &:hover {
-        &:before,
-        &:after {
-            width: 50%;
-            border-bottom: 3px solid #00b5d6;
-        }
-        &:after {
-            transform: translateX(-98%);
-        }
-    }
 `

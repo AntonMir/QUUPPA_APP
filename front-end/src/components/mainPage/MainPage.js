@@ -1,5 +1,5 @@
 // Link
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 // styled
 import styled from 'styled-components'
 
@@ -27,29 +27,4 @@ const H1 = styled.h1`
     font-size: 30px;
     margin: 0 10%;
     padding: 50px;
-`
-
-const CustomLink = styled(Link)`
-    position: relative;
-    color: #00b0d2;
-    cursor: pointer;
-    &:before,
-    &:after {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        border-bottom: 1px solid #aae03d;
-        content: '';
-        transition: all 0.3s ease;
-    }
-    &:hover {
-        &:before,
-        &:after {
-            width: 50%;
-        }
-        &:after {
-            transform: translateX(-99%);
-        }
-    }
 `
