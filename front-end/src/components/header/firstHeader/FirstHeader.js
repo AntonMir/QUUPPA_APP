@@ -4,7 +4,7 @@ import Nav from '@header/firstHeader/elements/Nav.js'
 import User from '@header/firstHeader/elements/User.js'
 import LogOutBtn from '@header/firstHeader/elements/LogOutBtn.js'
 import SignIn from '@header/firstHeader/elements/SignIn'
-import LanguageChanger from '@header/firstHeader/elements/LangChanger.js'
+import LanguageChanger from '@header/firstHeader/elements/langChange/LangChanger.js'
 
 // context
 import { AuthContext } from '@src/context/AuthContext.js'

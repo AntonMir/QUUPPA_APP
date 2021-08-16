@@ -1,40 +1,45 @@
-// Link
-// import { Link } from 'react-router-dom'
+import { useState } from 'react'
 // redux
 import { store } from '@store/store.js'
-import { changeLanguage } from '@store/actions.js'
+// components
+import AvalibleLang from '@header/firstHeader/elements/langChange/AvaalibleLang.js'
 // img
 import languageSvg from '@img/header/language.svg'
 import arrowDown from '@img/header/arrow-down.svg'
 // styled
 import styled from 'styled-components'
 
-const changeLanguageToRU = () => {
-    store.dispatch(changeLanguage('RU'))
-}
-
-const changeLanguageToEN = () => {
-    store.dispatch(changeLanguage('EN'))
-}
+const AvaalibleLangList = ['EN', 'RU']
 
 export default function LanguageChanger() {
+    const [currentLang, setCurrentLang] = useState('EN')
+
+    store.subscribe(() => {
+        setCurrentLang(store.getState().pageLanguage)
+    })
+
     return (
-        <LanguageMenu>
+        <LangChangeWrapper>
             <CurrentLangWrapper to="/auth">
                 <LangImg src={languageSvg} alt="globus" />
-                <CurrentLang>{store.getState().pageLanguage}</CurrentLang>
+                <CurrentLang>{currentLang}</CurrentLang>
                 <ArrowImg src={arrowDown} alt="arrowDown" />
             </CurrentLangWrapper>
             <AvailableLangList>
-                <AvaalibleLang onClick={changeLanguageToRU}>RU</AvaalibleLang>
-                <AvaalibleLang onClick={changeLanguageToEN}>EN</AvaalibleLang>
+                {AvaalibleLangList.map((lang) => {
+                    if (currentLang !== lang) {
+                        return <AvalibleLang lang={lang} key={lang} />
+                    }
+                    return []
+                })}
             </AvailableLangList>
-        </LanguageMenu>
+        </LangChangeWrapper>
     )
 }
 
-const LanguageMenu = styled.div``
-
+const LangChangeWrapper = styled.div`
+    position: relative;
+`
 const CurrentLangWrapper = styled.div`
     display: flex;
     align-items: center;
@@ -51,12 +56,11 @@ const CurrentLangWrapper = styled.div`
     &:hover {
         & + ul {
             opacity: 1;
-            top: 10%;
+            top: 40%;
             z-index: 1000;
         }
     }
 `
-
 const CurrentLang = styled.div`
     padding: 5px 5px;
     margin: 0;
@@ -66,17 +70,14 @@ const CurrentLang = styled.div`
     z-index: 999;
     font-size: 13px;
 `
-
 const LangImg = styled.img`
     width: 16px;
     height: auto;
 `
-
 const ArrowImg = styled.img`
     width: 10px;
     height: auto;
 `
-
 const AvailableLangList = styled.ul`
     position: absolute;
     background-color: #fff;
@@ -85,20 +86,7 @@ const AvailableLangList = styled.ul`
 
     &:hover {
         opacity: 1;
-        top: 10%;
+        top: 40%;
         z-index: 1000;
-    }
-`
-
-const AvaalibleLang = styled.li`
-    padding: 3px 23px;
-    border-top: 3px solid #00b5d6;
-    color: #aaa;
-    cursor: pointer;
-    user-select: none;
-    transition: all 0.5s ease;
-
-    &:hover {
-        color: #000;
     }
 `

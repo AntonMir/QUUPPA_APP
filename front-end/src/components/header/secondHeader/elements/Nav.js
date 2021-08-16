@@ -70,7 +70,7 @@ const NavEl = styled.li`
         bottom: 0;
         left: 50%;
         width: 0;
-        border-bottom: 5px solid #091f2c;
+        border-bottom: 7px solid #091f2c;
         content: '';
         transition: all 0.3s ease;
     }
@@ -78,7 +78,7 @@ const NavEl = styled.li`
         &:before,
         &:after {
             width: 60%;
-            border-bottom: 5px solid #00b5d6;
+            border-bottom: 7px solid #00b5d6;
         }
         &:after {
             transform: translateX(-98%);
