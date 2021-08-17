@@ -1,6 +1,8 @@
 // components
 import Logo from '@header/secondHeader/elements/Logo.js'
 import Nav from '@header/secondHeader/elements/Nav.js'
+import RequestDemo from '@header/secondHeader/elements/RequestDemo.js'
+import Search from '@header/secondHeader/elements/Search.js'
 // import Search from '@header/secondHeader/elements/Search.js'
 // styles
 import styled from 'styled-components'
@@ -8,20 +10,25 @@ import styled from 'styled-components'
 export default function SecondHeader() {
     return (
         <SecondHeaderStyled>
-            <Logo />
-            <Nav />
-            {/* <Search /> */}
+            <SecondHeaderElWrapper>
+                <Logo />
+                <Nav />
+                <RequestDemo />
+                <Search />
+            </SecondHeaderElWrapper>
         </SecondHeaderStyled>
     )
 }
 
 const SecondHeaderStyled = styled.div`
-    position: sticky;
-    top: 0;
+    background-color: #091f2c;
+`
+
+const SecondHeaderElWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #fff;
-    background-color: #091f2c;
-    padding: 0 3%;
+    max-width: 1440px;
+    margin: 0 auto;
 `

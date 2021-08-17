@@ -107,16 +107,16 @@ const Tablet = () => {
 }
 
 const TabletStyle = styled.div`
-    position: relative;
+    position: fixed;
+    left: calc(50% - 10vw);
+    width: 20vw;
+    opacity: 0.3;
+    z-index: -999;
 `
 
 const Img = styled.img`
-    position: fixed;
-    left: 0%;
-    top: 150px;
-    right: auto;
-    bottom: 0%;
-    width: 20vw;
+    width: 100%;
+    height: auto;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;

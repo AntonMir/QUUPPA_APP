@@ -19,4 +19,7 @@ export default Header
 const HeaderStyled = styled.div`
     position: sticky;
     top: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
 `

@@ -31,10 +31,10 @@ const CustomLink = styled(Link)`
 const ImgStyled = styled.img`
     height: 100%;
     width: auto;
+    color: #00b5d6;
 `
 
 const UserName = styled.p`
     margin: 0 10px;
-    color: #aae03d;
-    text-shadow: #000 0 0 5px;
+    color: #00b5d6;
 `

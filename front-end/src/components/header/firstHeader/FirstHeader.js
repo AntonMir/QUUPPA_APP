@@ -41,7 +41,9 @@ const FirstHeaderStyled = styled.div`
     color: #000;
     background-color: #fff;
     height: 30px;
-    padding: 0 3%;
+    padding: 0;
     z-index: 999;
     font-weight: 500;
+    max-width: 1440px;
+    margin: 0 auto;
 `
