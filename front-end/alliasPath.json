@@ -17,7 +17,8 @@
             "@mainPage": ["src/components/mainPage"],
             "@userPage": ["src/components/userPage"],
             "@tablet": ["src/components/tablet"],
-            "@routes": ["src/routes"]
+            "@routes": ["src/routes"],
+            "@config": ["src/config"]
         }
     }
 }

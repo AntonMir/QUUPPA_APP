@@ -10,27 +10,17 @@ export default function Nav() {
             <NavList>
                 <div>
                     <NavEl className="header-nav-el">
-                        <CustomLink to="/">Products</CustomLink>
+                        <CustomLink to="/">Умное страхование</CustomLink>
                     </NavEl>
                 </div>
                 <div>
                     <NavEl className="header-nav-el">
-                        <CustomLink to="/">Industries</CustomLink>
+                        <CustomLink to="/">О нас</CustomLink>
                     </NavEl>
                 </div>
                 <div>
                     <NavEl className="header-nav-el">
-                        <CustomLink to="/">Company</CustomLink>
-                    </NavEl>
-                </div>
-                <div>
-                    <NavEl className="header-nav-el">
-                        <CustomLink to="/">Resources</CustomLink>
-                    </NavEl>
-                </div>
-                <div>
-                    <NavEl className="header-nav-el">
-                        <CustomLink to="/">Connected Magazine</CustomLink>
+                        <CustomLink to="/">Форма для связи</CustomLink>
                     </NavEl>
                 </div>
             </NavList>

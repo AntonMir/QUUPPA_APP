@@ -4,7 +4,7 @@ import { reducer } from './reducer'
 // Начальное состояние
 export const initialState = {
     authPageChosenForm: 'login',
-    pageLanguage: 'EN',
+    pageLanguage: 'RU',
 }
 
 export const store = createStore(

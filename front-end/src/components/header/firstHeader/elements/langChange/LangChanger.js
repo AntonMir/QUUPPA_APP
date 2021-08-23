@@ -2,7 +2,7 @@ import { useState } from 'react'
 // redux
 import { store } from '@store/store.js'
 // components
-import AvalibleLang from '@header/firstHeader/elements/langChange/AvaalibleLang.js'
+import AvalibleLang from '@header/firstHeader/elements/langChange/elements/AvaalibleLang.js'
 // img
 import languageSvg from '@img/header/language.svg'
 import arrowDown from '@img/header/arrow-down.svg'
@@ -12,7 +12,7 @@ import styled from 'styled-components'
 const AvaalibleLangList = ['EN', 'RU']
 
 export default function LanguageChanger() {
-    const [currentLang, setCurrentLang] = useState('EN')
+    const [currentLang, setCurrentLang] = useState('RU')
 
     store.subscribe(() => {
         setCurrentLang(store.getState().pageLanguage)

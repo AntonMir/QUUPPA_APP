@@ -6,7 +6,7 @@ import styled from 'styled-components'
 export default function RequestDemo() {
     return (
         <ReqStyled>
-            <CustomLink to="/">Request a Demo</CustomLink>
+            <CustomLink to="/">Запросить пробник</CustomLink>
         </ReqStyled>
     )
 }

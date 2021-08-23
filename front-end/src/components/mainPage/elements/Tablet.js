@@ -108,9 +108,10 @@ const Tablet = () => {
 
 const TabletStyle = styled.div`
     position: fixed;
-    left: calc(50% - 10vw);
-    width: 20vw;
-    opacity: 0.3;
+    left: calc(50% - 12vw);
+    top: 16%;
+    width: 24vw;
+    opacity: 0.7;
     z-index: -999;
 `
 

@@ -1,5 +1,3 @@
-// Link
-import { Link } from 'react-router-dom'
 // img
 import search from '@img/header/search.svg'
 // styles

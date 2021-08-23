@@ -16,30 +16,37 @@ export default function FirstHeader() {
 
     if (auth.isAuthenticated) {
         return (
-            <FirstHeaderStyled>
-                <Nav />
-                <User />
-                <LogOutBtn />
-                <LanguageChanger />
-            </FirstHeaderStyled>
+            <FirstHeaderWrapper>
+                <FirstHeaderStyled>
+                    <Nav />
+                    <User />
+                    <LogOutBtn />
+                    <LanguageChanger />
+                </FirstHeaderStyled>
+            </FirstHeaderWrapper>
         )
     }
 
     return (
-        <FirstHeaderStyled>
-            <Nav />
-            <SignIn />
-            <LanguageChanger />
-        </FirstHeaderStyled>
+        <FirstHeaderWrapper>
+            <FirstHeaderStyled>
+                <Nav />
+                <SignIn />
+                <LanguageChanger />
+            </FirstHeaderStyled>
+        </FirstHeaderWrapper>
     )
 }
+
+const FirstHeaderWrapper = styled.div`
+    background-color: #fff;
+`
 
 const FirstHeaderStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #000;
-    background-color: #fff;
     height: 30px;
     padding: 0;
     z-index: 999;

@@ -15,11 +15,11 @@ import styled from 'styled-components'
 // }
 
 export default function SignIn() {
-    return <CustomLink to="/auth">Sign In</CustomLink>
+    return <CustomLink to="/auth">Вход / Регистрация</CustomLink>
 }
 
 const CustomLink = styled(Link)`
-    margin: 0 60px 0px 10px;
+    margin: 0 45px 0px 10px;
     color: #000;
     cursor: pointer;
     user-select: none;

@@ -14,8 +14,8 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     border: none !important;
-    -webkit-text-fill-color: white !important; /* цвет текста */
-    -webkit-box-shadow: 0 0 0px 1000px #282828 inset !important; /* цвет заднего фона */
+    -webkit-text-fill-color: #000 !important; /* цвет текста */
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important; /* цвет заднего фона */
 }
 /* ___________________________________________________ */
 
@@ -29,3 +29,4 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+

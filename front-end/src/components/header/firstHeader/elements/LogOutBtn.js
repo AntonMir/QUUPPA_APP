@@ -11,14 +11,13 @@ export default function LogOutBtn() {
 
     return (
         <CustomLink to="/" onClick={auth.logout}>
-            Exit
+            Выход
         </CustomLink>
     )
 }
 
 const CustomLink = styled(Link)`
-    padding: 10px 40px 10px 0;
-    margin: 0 0 0 20px;
+    margin: 0 40px 0 20px;
     color: #000;
     cursor: pointer;
     user-select: none;

@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 // components
 import useRoutes from '@routes/Routes.js'
 import Header from '@header/Header.js'
+import Footer from '@footer/Footer.js'
 // hooks
 import { useAuth } from '@hooks/auth.hook.js'
 // context
@@ -29,7 +30,7 @@ export default function App() {
             <Router>
                 <Header />
                 {routes}
-                {/* <Footer /> */}
+                <Footer />
             </Router>
         </AuthContext.Provider>
     )

@@ -7,17 +7,14 @@ import styled from 'styled-components'
 export default function Nav() {
     return (
         <NavStyled>
-            <NavList>
-                <NavEl className="header-nav-el">
-                    <CustomLink to="/">Customer Support</CustomLink>
-                </NavEl>
-                <NavEl className="header-nav-el">
-                    <CustomLink to="/">Contuct Us</CustomLink>
-                </NavEl>
-                <NavEl className="header-nav-el">
-                    <CustomLink to="/">Careers</CustomLink>
-                </NavEl>
-            </NavList>
+            <Ul>
+                <Li className="header-nav-el">
+                    <CustomLink to="/">Служба поддержки</CustomLink>
+                </Li>
+                <Li className="header-nav-el">
+                    <CustomLink to="/">Карьера</CustomLink>
+                </Li>
+            </Ul>
         </NavStyled>
     )
 }
@@ -29,15 +26,15 @@ const NavStyled = styled.div`
     margin: 0 10px;
 `
 
-const NavList = styled.ul`
-    justify-self: center;
+const Ul = styled.ul`
     display: flex;
-    list-style: none;
+    justify-self: center;
+    list-style-type: none;
     padding: 0;
     margin: 0;
 `
 
-const NavEl = styled.li`
+const Li = styled.li`
     padding: 10px 20px;
     margin: 0 5px;
     cursor: pointer;

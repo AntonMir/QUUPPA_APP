@@ -4,7 +4,7 @@
 
 =======
 
-QUUPPA server use http://localhost:9000
+Email server use http://localhost:7000
 
 Auth server use http://localhost:8000
 
