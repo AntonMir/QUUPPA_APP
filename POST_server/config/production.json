@@ -1,0 +1,9 @@
+{
+    "port": 7000,
+    "corsOptions": {
+        "origin": "http://example.com",
+        "optionsSuccessStatus": 200
+    }
+}
+
+

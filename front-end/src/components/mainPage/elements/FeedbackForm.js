@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect} from 'react'
 // castom hook
 import { useHttp } from '@hooks/http.hook.js'
 import { useMessage } from '@hooks/message.hook.js'
-// context
-import { AuthContext } from '@src/context/AuthContext.js'
 // config
 import config from '@config/config.js'
 // styled
@@ -30,16 +28,17 @@ export default function FeedbackForm() {
         const changeUserData = (event) => {
             setForm({ ...form, [event.target.name]: event.target.value })
         }
-
         
         // вызывает хук useHttp, отправляет запрос на сервер,
         // получает ответ в виде промиса и выводит его на экран
         const sendQuestion = async () => {
             try {
-                const data = await request(`${config.EmailServerURL}`, 'POST', { ...form })
-                message(data)
+                const data = await request(`${config.PostServerURL}`, 'POST', { ...form })
+                // после отправки очищаем форму
+                // setForm({ name: '', email: '', question: '' })
+                message(data.message)
             } catch (error) {
-                console.log('---', 'sendQuestionERROR', error);
+                console.log('---', 'sendQuestionERROR', error.message);
             }
         }
 
@@ -48,12 +47,13 @@ export default function FeedbackForm() {
         <FeedbackFormWrapper>
             <FeedbackFormStyled>
                 <H1>Форма для связи</H1>
-                <p>{config.EmailServerURL}</p>
+                <p>{config.PostServerURL}</p>
                 <Input 
                     placeholder="Имя" 
                     id="feedback-name" 
                     type="text" 
                     name="name" 
+                    value={form.name}
                     onChange={changeUserData} 
                 />
                 <Input 
@@ -61,13 +61,16 @@ export default function FeedbackForm() {
                     id="feedback-email" 
                     type="text" 
                     name="email" 
-                    onChange={changeUserData} />
+                    value={form.email}
+                    onChange={changeUserData} 
+                />
                 <Question
                     placeholder="Question"
                     id="feedback-question"
                     type="text"
                     name="question"
                     autoComplete="off"
+                    value={form.question}
                     onChange={changeUserData}
                 />
                 <Button onClick={sendQuestion} disabled={loading}>

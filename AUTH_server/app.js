@@ -6,7 +6,7 @@ require('module-alias/register')
 
 const app = express()
 
-const PORT = process.env.PORT || config.get('port') || 8000
+const port = process.env.PORT || config.get('port') || 8000
 
 app.use(express.json({ extended: true }))
 
@@ -20,7 +20,7 @@ async function start() {
             useUnifiedTopology: true,
             useCreateIndex: true,
         })
-        app.listen(PORT, () => console.log(chalk.magenta(`>>> AUTH server listen http://localhost:${PORT}`)))
+        app.listen(port, () => console.log(chalk.magenta(`>>> AUTH server listen http://localhost:${port}`)))
     } catch (e) {
         console.log('Server Error:', e.message)
         process.exit(1)

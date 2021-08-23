@@ -1,0 +1,30 @@
+{
+    "name": "post_server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon app.js",
+        "install": "npm i"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "chalk": "^3.0.0",
+        "module-alias": "^2.2.2",
+        "nodemon": "^2.0.12"
+    },
+    "dependencies": {
+        "config": "^3.3.6",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-validator": "^6.12.1",
+        "nodemailer": "^6.6.3"
+    },
+    "_moduleAliases": {
+        "@root": ".",
+        "@routes": "routes",
+        "@config": "config.json"
+    }
+}
