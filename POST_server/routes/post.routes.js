@@ -3,6 +3,9 @@ const { check, validationResult } = require('express-validator')
 const config = require('config')
 const router = Router()
 
+const sendEmail = require('@mailers/post.mailer.js')
+
+
 router.post(
     '/',
     [
@@ -18,25 +21,14 @@ router.post(
                     message: 'Некорректный email',
                 })
             }
+            console.log('------------- REQ BODY ---------------');
+            console.log(req.body);
+            console.log('--------------------------------------');
 
-            console.log('req.body:', req.body);
-            const { name, email, question } = req.body
+            sendEmail(config.get('emailReceiver'), req.body)
 
-            // send question to tracking email 
-            // config.get('trackingEmail')
-
-
-
-
-
-
-
-
-
-
-
-
-            res.status(200).json({ message: 'Успешно' })
+            res.status(200).json({ message: 'Успешно' }) 
+            // 'В ближайшее время мы с Вами свяжемся и ответим на все вопросы'
         } catch (e) {
             res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
         }

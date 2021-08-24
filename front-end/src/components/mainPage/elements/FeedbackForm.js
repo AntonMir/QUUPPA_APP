@@ -35,7 +35,7 @@ export default function FeedbackForm() {
             try {
                 const data = await request(`${config.PostServerURL}`, 'POST', { ...form })
                 // после отправки очищаем форму
-                // setForm({ name: '', email: '', question: '' })
+                setForm({ name: '', email: '', question: '' })
                 message(data.message)
             } catch (error) {
                 console.log('---', 'sendQuestionERROR', error.message);

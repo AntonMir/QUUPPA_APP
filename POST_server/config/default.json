@@ -4,7 +4,7 @@
         "origin": "http://localhost:3000",
         "optionsSuccessStatus": 200
     },
-    "trackingEmail": "insuran7test2@mail.ru"
+    "emailReceiver": "insuran7test2@mail.ru"
 }
 
 

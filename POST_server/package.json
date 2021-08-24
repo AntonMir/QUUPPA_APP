@@ -25,6 +25,7 @@
     "_moduleAliases": {
         "@root": ".",
         "@routes": "routes",
-        "@config": "config.json"
+        "@config": "config.json",
+        "@mailers": "mailers"
     }
 }
