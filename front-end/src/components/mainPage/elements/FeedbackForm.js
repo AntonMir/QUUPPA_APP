@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 // castom hook
 import { useHttp } from '@hooks/http.hook.js'
 import { useMessage } from '@hooks/message.hook.js'
@@ -8,61 +8,90 @@ import config from '@config/config.js'
 import styled from 'styled-components'
 
 export default function FeedbackForm() {
+    // кастомный хук для вывоа ошибки
+    const message = useMessage()
 
-        // кастомный хук для вывоа ошибки
-        const message = useMessage()
+    // how many seconds need wait
+    const waitingInterval = 10
 
-        // кастомный хук для отправки данных
-        const { loading, error, request, clearError } = useHttp()
+    // кастомный хук для отправки данных
+    const { error, request, clearError } = useHttp()
 
-        // state для name, email и question
-        const [form, setForm] = useState({ name: '', email: '', question: '' })
+    // state для name, email и question
+    const [form, setForm] = useState({ name: '', email: '', question: '' })
+    const [prohibitionSending, setProhibitionSending] = useState(false)
+    const [counter, setCounter] = useState(10)
 
-        // обработаем ошибку
-        useEffect(() => {
-            message(error)
-            clearError()
-        }, [error, message, clearError])
+    // обработаем ошибку
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
 
-        // сохраняем в наш state name, email и question
-        const changeUserData = (event) => {
-            setForm({ ...form, [event.target.name]: event.target.value })
+    // заводим счетчик
+    useEffect(() => {
+        let timer
+        if (prohibitionSending && counter >= 0) {
+            timer = setTimeout(() => setCounter((counter) => counter - 1), 1000)
         }
-        
-        // вызывает хук useHttp, отправляет запрос на сервер,
-        // получает ответ в виде промиса и выводит его на экран
-        const sendQuestion = async () => {
-            try {
-                const data = await request(`${config.PostServerURL}`, 'POST', { ...form })
-                // после отправки очищаем форму
-                setForm({ name: '', email: '', question: '' })
-                message(data.message)
-            } catch (error) {
-                console.log('---', 'sendQuestionERROR', error.message);
+        return () => {
+            if (timer) {
+                clearTimeout(timer)
             }
         }
+    }, [prohibitionSending, counter])
 
+    // сохраняем в наш state name, email и question
+    const changeUserData = (event) => {
+        setForm({ ...form, [event.target.name]: event.target.value })
+    }
+
+    // возвращаем доступ к отправке данных и откатываем счетчик обратно до "10"
+    const accessSending = () => {
+        setProhibitionSending(false)
+        setCounter(10)
+    }
+
+    // вызывает хук useHttp, отправляет запрос на сервер,
+    // получает ответ в виде промиса и выводит его на экран
+    const sendQuestion = async () => {
+        try {
+            const data = await request(`${config.PostServerURL}`, 'POST', { ...form })
+            // очищаем форму
+            setForm({ name: '', email: '', question: '' })
+            // выводим ответ от сервера
+            message(data.message)
+            // после отправки запрещаем на время повторную отправку
+            setProhibitionSending(true)
+            setTimeout(() => {
+                accessSending()
+            }, waitingInterval * 1000)
+        } catch (error) {
+            console.log('---', 'sendQuestionERROR', error.message)
+        }
+    }
+
+    console.log('---', 'RENDERED')
 
     return (
         <FeedbackFormWrapper>
             <FeedbackFormStyled>
                 <H1>Форма для связи</H1>
-                <p>{config.PostServerURL}</p>
-                <Input 
-                    placeholder="Имя" 
-                    id="feedback-name" 
-                    type="text" 
-                    name="name" 
+                <Input
+                    placeholder="Имя"
+                    id="feedback-name"
+                    type="text"
+                    name="name"
                     value={form.name}
-                    onChange={changeUserData} 
+                    onChange={changeUserData}
                 />
-                <Input 
-                    placeholder="Email" 
-                    id="feedback-email" 
-                    type="text" 
-                    name="email" 
+                <Input
+                    placeholder="Email"
+                    id="feedback-email"
+                    type="text"
+                    name="email"
                     value={form.email}
-                    onChange={changeUserData} 
+                    onChange={changeUserData}
                 />
                 <Question
                     placeholder="Question"
@@ -73,9 +102,12 @@ export default function FeedbackForm() {
                     value={form.question}
                     onChange={changeUserData}
                 />
-                <Button onClick={sendQuestion} disabled={loading}>
-                    Отправить 
+                <Button onClick={sendQuestion} disabled={prohibitionSending}>
+                    Отправить
                 </Button>
+                <p style={{ opacity: `${prohibitionSending ? '1' : '0'}` }}>
+                    Повторная отправка будет доступна через {counter} секунд
+                </p>
             </FeedbackFormStyled>
         </FeedbackFormWrapper>
     )
@@ -91,7 +123,7 @@ const FeedbackFormStyled = styled.div`
     align-items: center;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 0 70px;
+    padding: 0 0 40px;
 `
 
 const H1 = styled.h1`
@@ -132,7 +164,7 @@ const Button = styled.button`
     margin: 15px 0 0 0;
     font-size: 20px;
     color: #fff;
-    background-color: #091F2C;
+    background-color: #091f2c;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -140,5 +172,8 @@ const Button = styled.button`
     -o-border-radius: 5px;
     &:focus {
         background-color: rgba(00, 00, 00, 0) !important;
+    }
+    &:disabled {
+        opacity: 0.5;
     }
 `

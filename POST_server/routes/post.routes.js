@@ -25,7 +25,13 @@ router.post(
             console.log(req.body);
             console.log('--------------------------------------');
 
-            sendEmail(config.get('emailReceiver'), req.body)
+            const userData = await req.body;
+            console.log('userData', userData);
+
+            if (!isEmptyObject(userData)) {
+                sendEmail(config.get('emailReceiver'), userData)
+                console.log('---', 'объект пуст');
+            }
 
             res.status(200).json({ message: 'Успешно' }) 
             // 'В ближайшее время мы с Вами свяжемся и ответим на все вопросы'
@@ -34,5 +40,14 @@ router.post(
         }
     },
 )
+
+function isEmptyObject(obj) {
+    for (var i in obj) {
+        if (obj.hasOwnProperty(i)) {
+            return false;
+        }
+    }
+    return true;
+}
 
 module.exports = router
