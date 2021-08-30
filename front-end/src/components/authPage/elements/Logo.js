@@ -17,7 +17,7 @@ const CustomLink = styled(Link)`
     flex: 0;
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 0 15px;
     text-decoration: none;
     user-select: none;
     height: 80px;

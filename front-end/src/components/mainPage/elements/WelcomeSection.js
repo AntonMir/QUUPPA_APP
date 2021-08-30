@@ -36,7 +36,7 @@ const WelcomeSectionWrapper = styled.div`
 const WelcomeSectionStyled = styled.div`
     display: flex;
     justify-content: space-between;
-    padding: 0 3%;
+    padding: 0%;
     max-width: 1440px;
     max-width: 1440px;
     margin: 0 auto 50px;

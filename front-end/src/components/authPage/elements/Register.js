@@ -49,7 +49,15 @@ export default function Register() {
     return (
         <RegisterWrapper>
             <RegForm>
-                <Input placeholder="Email" id="register-email" type="text" name="email" onChange={changeUserData} />
+                <Input
+                    placeholder="Email"
+                    id="register-email"
+                    type="text"
+                    name="email"
+                    onChange={changeUserData}
+                    autoComplete="off"
+                    required
+                />
 
                 <Input
                     placeholder="Password"
@@ -67,7 +75,7 @@ export default function Register() {
 }
 
 const RegisterWrapper = styled.div`
-    padding: 50px 100px 40px;
+    padding: 30px 50px 30px;
     width: 100%;
     box-shadow: 2 2 5px #000;
     border: 1px #aaa solid;
@@ -88,27 +96,27 @@ const RegForm = styled.div`
 
 const Input = styled.input`
     margin-bottom: 30px !important;
-    background-color: rgba(44, 44, 44, 0.9) !important;
-    padding: 0 20px !important;
+    background-color: rgba(00, 00, 00, 0);
     color: #fff;
-    &:focus {
-        border-bottom: 1px solid #00b0d2 !important;
-        box-shadow: 0px 1px 0 0 #00b0d2 !important;
-    }
+    height: 30px;
+    width: 100%;
 `
 
 const Button = styled.button`
     padding: 5px 25px 10px;
     margin: 15px 0 0 0;
     font-size: 20px;
+    background-color: rgba(00, 00, 00, 0);
     color: #fff;
-    background-color: rgba(00, 00, 00, 0) !important;
+    cursor: pointer;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    &:focus {
-        background-color: #000 !important;
+    border: 1px #00b5d6 solid;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: #00b5d6;
     }
 `

@@ -18,7 +18,7 @@ const PossibilitiesStyled = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 3%;
+    padding: 0;
     max-width: 1440px;
     margin: 0 auto 50px;
 `

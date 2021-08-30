@@ -114,7 +114,7 @@ export default function FeedbackForm() {
 }
 
 const FeedbackFormWrapper = styled.div`
-    background-color: rgba(0, 120, 160, 0.8);
+    // background-color: rgba(0, 120, 160, 0.8);
 `
 
 const FeedbackFormStyled = styled.div`
@@ -128,34 +128,38 @@ const FeedbackFormStyled = styled.div`
 
 const H1 = styled.h1`
     font-size: 45px;
-    color: #fff;
+    color: #000;
+    margin: 60px 0 50px;
 `
 
 const Input = styled.input`
     margin-bottom: 30px !important;
     background-color: #fff !important;
-    padding: 0 20px !important;
     color: #000;
-    max-width: 70%;
+    max-width: 50%;
+    padding: 0 20px !important;
     opacity: 0.8;
+    border: 1px solid #000 !important;
     &:focus {
-        border-bottom: 1px solid #00b0d2 !important;
-        box-shadow: 0px 1px 0 0 #00b0d2 !important;
+        border: 1px solid #00b0d2 !important;
+        box-shadow: none !important;
     }
 `
 
 const Question = styled.textarea`
     margin-bottom: 30px !important;
     background-color: #fff !important;
-    padding: 20px !important;
+    padding: 20px;
     color: #000;
     height: 150px;
-    max-width: 73%;
+    max-width: calc(50% + 40px);
     min-width: 30%;
     opacity: 0.8;
-    &:focus {
-        border-bottom: 1px solid #00b0d2 !important;
-        box-shadow: 0px 1px 0 0 #00b0d2 !important;
+    border: 1px solid #000 !important;
+    &:focus-visible {
+        border: 1px solid #00b0d2 !important;
+        box-shadow: none!important;
+        outline: none !important;
     }
 `
 

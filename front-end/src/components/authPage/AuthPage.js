@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 // conponents
 import Login from '@components/authPage/elements/Login.js'
 import Register from '@components/authPage/elements/Register.js'
+import Logo from '@components/authPage/elements/Logo.js'
+
 // redux
 import { store } from '@store/store.js'
-/// styled
+// img
+import wave from '@img/authPage/wave.svg'
+// styled
 import styled from 'styled-components'
 
 export default function AuthPage() {
@@ -22,16 +26,19 @@ export default function AuthPage() {
 
     return (
         <AuthPageStyled>
+            <Logo />
             <AuthForms>
                 <ButtonsWrapper>
                     <Button
                         style={chosenForm === 'login' ? { borderBottom: 'none', borderRight: 'none' } : {}}
-                        onClick={choseLogin}>
+                        onClick={choseLogin}
+                    >
                         Вход
                     </Button>
                     <Button
                         style={chosenForm === 'register' ? { borderBottom: 'none', borderLeft: 'none' } : {}}
-                        onClick={choseRegister}>
+                        onClick={choseRegister}
+                    >
                         Регистрация
                     </Button>
                 </ButtonsWrapper>
@@ -42,16 +49,24 @@ export default function AuthPage() {
 }
 
 const AuthPageStyled = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0;
-    padding: 5%;
-    height: calc(100vh - 80px);
+    padding: 0 0 50px 0;
+    height: 100vh;
+    color: #fff;
+    background-color: #091f2c;
+    background-image: url(${wave}) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 100% auto !important;
 `
 
 const AuthForms = styled.div`
-    margin: 0 auto;
-    padding: 0;
-    max-width: 500px;
-    background-color: rgba(00, 00, 00, 0.3);
+    margin: 100px 0 0 0;
+    width: calc(300px + 12vw);
 `
 
 const ButtonsWrapper = styled.div`
@@ -64,8 +79,7 @@ const Button = styled.div`
     text-align: center;
     font-style: normal;
     font-weight: 100;
-    font-size: 22px;
-    color: #fff;
+    font-size: 17px;
     cursor: pointer;
     border: 1px #aaa solid;
     padding: 10px 40px;
