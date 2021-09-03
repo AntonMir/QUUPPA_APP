@@ -34,27 +34,41 @@ export default function PosFirst() {
 const PosFirstStyled = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 0 100px 0;
+    padding: 0;
+    margin-bottom: 50px;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
 `
 
 const Ul = styled.ul`
-    max-width: 45%;
+    max-width: 49%;
     & > li {
-        font-size: calc(0.5vw + 10px);
+        font-size: calc(0.3vw + 15px);
         color: #091f2c;
         max-width: 100%;
         margin: 0 0 10px 0;
         list-style-type: disc !important;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 100%;
+        margin-bottom: 30px;
     }
 `
 
 const Illustration = styled.div`
     display: flex;
     align-items: center;
-    max-width: 45%;
+    justify-content: center;
+    max-width: 49%;
+
+    @media (max-width: 1024px) {
+        max-width: 100%;
+    }
 `
 
 const Img = styled.img`
-    max-width: 100%;
+    width: 100%;
 `

@@ -6,64 +6,75 @@ import styled from 'styled-components'
 
 export default function WelcomeSection() {
     return (
-        <WelcomeSectionWrapper>
-            <WelcomeSectionStyled>
-                <Text>
-                    <h1> Умное страхование</h1>
-                    <p>
-                        Устройство позволяет страховым компаниям предоставлять клиентам скидки на КАСКО по таким параметрам
-                        как стиль вождения, пробег, сезонность.
-                    </p>
-                    <p>
-                        А также использовать варианты страховки по принципу ”Pay as you go” без установки дорогостоящего
-                        дополнительного оборудования в автомобиль. Вся обработка данных, а также их передача в страховую
-                        компанию в защищенном режиме производится с помощью смартфона водителя.
-                    </p>
-                </Text>
+        <WelcomeSectionStyled>
+            <Text>
+                <h1> Умное страхование</h1>
+                <p>
+                    Устройство позволяет страховым компаниям предоставлять клиентам скидки на КАСКО по таким параметрам
+                    как стиль вождения, пробег, сезонность.
+                </p>
+                <br />
+                <p>
+                    А также использовать варианты страховки по принципу ”Pay as you go” без установки дорогостоящего
+                    дополнительного оборудования в автомобиль. Вся обработка данных, а также их передача в страховую
+                    компанию в защищенном режиме производится с помощью смартфона водителя.
+                </p>
+            </Text>
 
-                <Illustration>
-                    <Img src={phoneNavImg} alt="phone" />
-                </Illustration>
-            </WelcomeSectionStyled>
-        </WelcomeSectionWrapper>
+            <Illustration>
+                <Img src={phoneNavImg} alt="phone" />
+            </Illustration>
+        </WelcomeSectionStyled>
     )
 }
-
-const WelcomeSectionWrapper = styled.div`
-    // background-color: rgba(255, 255, 255, 0.8);
-`
 
 const WelcomeSectionStyled = styled.div`
     display: flex;
     justify-content: space-between;
-    padding: 0%;
-    max-width: 1440px;
-    max-width: 1440px;
-    margin: 0 auto 50px;
+    padding: 0;
+    margin-bottom: 50px;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
 `
 
 const Text = styled.div`
-    max-width: 45%;
+    max-width: 49%;
     & > h1 {
         font-size: calc(2vw + 20px);
         font-weight: bold;
+        margin: 0 0 20px 0;
         color: #091f2c;
         max-width: 100%;
     }
     & > p {
-        text-indent: 20px;
-        font-size: calc(0.5vw + 10px);
+        font-size: calc(0.3vw + 15px);
         max-width: 90%;
         margin: 0;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        & > p {
+            max-width: 100%;
+        }
     }
 `
 
 const Illustration = styled.div`
     display: flex;
     align-items: center;
-    max-width: 45%;
+    justify-content: center;
+    max-width: 49%;
+
+    @media (max-width: 1024px) {
+        max-width: 100%;
+    }
 `
 
 const Img = styled.img`
-    max-width: 100%;
+    width: 100%;
 `

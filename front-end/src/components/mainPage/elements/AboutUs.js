@@ -6,68 +6,73 @@ import styled from 'styled-components'
 
 export default function AboutUs() {
     return (
-        <PosFirstStyledWrapper>
-            <PosFirstStyled>
+        <PosFirstStyled>
+            <Text>
+                <h1>О нас</h1>
+                <p>
+                    Наш компания заявила о себе еще в 2014 году.
+                    <br />
+                    заинтересовал наш продуктесли Вас заинтересовал наш продуктесли Вас заинтересовал наш продуктесли
+                    Вас заинтересовал наш продуктесли Вас заинтересовал наш продуктесли Вас заинтересовал наш
+                    продуктесли Вас заинтересовал наш продуктесли Вас заинтересовал наш продуктесли Вас заинтересовал
+                    наш продуктесли Вас заинтересовал наш
+                </p>
+            </Text>
 
-                <Text>
-                    <h1>О нас</h1>
-                    <p>
-                        Наш компания заявила о себе еще в 2014 году.<br/>
-
-                        заинтересовал наш продуктесли Вас заинтересовал наш 
-                        продуктесли Вас заинтересовал наш продуктесли Вас 
-                        заинтересовал наш продуктесли Вас заинтересовал наш 
-                        продуктесли Вас заинтересовал наш продуктесли Вас 
-                        заинтересовал наш продуктесли Вас заинтересовал наш 
-                        продуктесли Вас заинтересовал наш продуктесли Вас 
-                        заинтересовал наш
-                    </p>
-                </Text>
-                
-
-                <Illustration>
-                    <Img src={womanCar} alt="womanCar" />
-                </Illustration>
-
-            </PosFirstStyled>
-        </PosFirstStyledWrapper>
+            <Illustration>
+                <Img src={womanCar} alt="womanCar" />
+            </Illustration>
+        </PosFirstStyled>
     )
 }
-
-const PosFirstStyledWrapper = styled.div`
-`
 
 const PosFirstStyled = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 0;
-    max-width: 1440px;
-    max-width: 1440px;
-    margin: 0 auto 50px;
+    margin-bottom: 50px;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
 `
 
 const Text = styled.div`
-    max-width: 45%;
+    max-width: 49%;
     & > h1 {
-        text-align: center;
-        font-size: calc(1vw + 20px);
+        font-size: calc(1.5vw + 20px);
         font-weight: bold;
+        margin: 0 0 20px 0;
         color: #091f2c;
         max-width: 100%;
     }
     & > p {
-        text-indent: 20px;
-        font-size: calc(0.5vw + 10px);
+        font-size: calc(0.3vw + 15px);
+        max-width: 90%;
         margin: 0;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        & > p {
+            max-width: 100%;
+        }
     }
 `
 
 const Illustration = styled.div`
     display: flex;
     align-items: center;
-    max-width: 45%;
+    justify-content: center;
+    max-width: 49%;
+
+    @media (max-width: 1024px) {
+        max-width: 100%;
+    }
 `
 
 const Img = styled.img`
-    max-width: 100%;
+    width: 100%;
 `

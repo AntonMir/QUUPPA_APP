@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // routes
 import { BrowserRouter as Router } from 'react-router-dom'
 // components
 import useRoutes from '@routes/Routes.js'
-
+// redux
+import { store } from '@store/store.js'
+import { changeBurgerMenu } from '@store/actions.js'
 // hooks
 import { useAuth } from '@hooks/auth.hook.js'
 // context
@@ -19,6 +21,12 @@ export default function App() {
     const isAuthenticated = !!token
 
     const routes = useRoutes(isAuthenticated)
+
+    useEffect(() => {
+        window.onclick = (event) => {
+            store.dispatch(changeBurgerMenu(false))
+        }
+    })
 
     return (
         // AuthContext - является контекстом, но он должен быть обязательно провайдером

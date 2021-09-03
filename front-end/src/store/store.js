@@ -5,6 +5,7 @@ import { reducer } from './reducer'
 export const initialState = {
     authPageChosenForm: 'login',
     pageLanguage: 'RU',
+    burgerMenuIsOpen: false,
 }
 
 export const store = createStore(

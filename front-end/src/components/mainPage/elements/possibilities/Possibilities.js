@@ -19,6 +19,5 @@ const PossibilitiesStyled = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 0;
-    max-width: 1440px;
-    margin: 0 auto 50px;
+    margin-bottom: 50px;
 `

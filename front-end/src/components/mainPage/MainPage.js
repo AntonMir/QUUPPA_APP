@@ -21,6 +21,21 @@ export default function MainPage() {
 }
 
 const Main = styled.div`
-    margin: 80px auto 0;
+    margin: 50px auto 0;
     padding: 0;
+    max-width: 1440px;
+
+    @media (max-width: 1600px) {
+        max-width: 1140px;
+    }
+    @media (max-width: 1200px) {
+        max-width: 960px;
+    }
+    @media (max-width: 1024px) {
+        max-width: 690px;
+        padding: 0 5%;
+    }
+    @media (max-width: 800px) {
+        padding: 0 8%;
+    }
 `

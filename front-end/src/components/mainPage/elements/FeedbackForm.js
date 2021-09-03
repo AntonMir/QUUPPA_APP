@@ -18,6 +18,7 @@ export default function FeedbackForm() {
     const { error, request, clearError } = useHttp()
 
     // state для name, email и question
+    // prohibition - запрет
     const [form, setForm] = useState({ name: '', email: '', question: '' })
     const [prohibitionSending, setProhibitionSending] = useState(false)
     const [counter, setCounter] = useState(10)
@@ -74,60 +75,52 @@ export default function FeedbackForm() {
     console.log('---', 'RENDERED')
 
     return (
-        <FeedbackFormWrapper>
-            <FeedbackFormStyled>
-                <H1>Форма для связи</H1>
-                <Input
-                    placeholder="Имя"
-                    id="feedback-name"
-                    type="text"
-                    name="name"
-                    value={form.name}
-                    onChange={changeUserData}
-                />
-                <Input
-                    placeholder="Email"
-                    id="feedback-email"
-                    type="text"
-                    name="email"
-                    value={form.email}
-                    onChange={changeUserData}
-                />
-                <Question
-                    placeholder="Question"
-                    id="feedback-question"
-                    type="text"
-                    name="question"
-                    autoComplete="off"
-                    value={form.question}
-                    onChange={changeUserData}
-                />
-                <Button onClick={sendQuestion} disabled={prohibitionSending}>
-                    Отправить
-                </Button>
-                <p style={{ opacity: `${prohibitionSending ? '1' : '0'}` }}>
-                    Повторная отправка будет доступна через {counter} секунд
-                </p>
-            </FeedbackFormStyled>
-        </FeedbackFormWrapper>
+        <FeedbackFormStyled>
+            <H1>Форма для связи</H1>
+            <Input
+                placeholder="Имя"
+                id="feedback-name"
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={changeUserData}
+            />
+            <Input
+                placeholder="Email"
+                id="feedback-email"
+                type="text"
+                name="email"
+                value={form.email}
+                onChange={changeUserData}
+            />
+            <Question
+                placeholder="Question"
+                id="feedback-question"
+                type="text"
+                name="question"
+                autoComplete="off"
+                value={form.question}
+                onChange={changeUserData}
+            />
+            <Button onClick={sendQuestion} disabled={prohibitionSending}>
+                Отправить
+            </Button>
+            <p style={{ opacity: `${prohibitionSending ? '1' : '0'}` }}>
+                Повторная отправка будет доступна через {counter} секунд
+            </p>
+        </FeedbackFormStyled>
     )
 }
-
-const FeedbackFormWrapper = styled.div`
-    // background-color: rgba(0, 120, 160, 0.8);
-`
 
 const FeedbackFormStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1440px;
-    margin: 0 auto;
     padding: 0 0 40px;
 `
 
 const H1 = styled.h1`
-    font-size: 45px;
+    font-size: calc(2vw + 25px);
     color: #000;
     margin: 60px 0 50px;
 `
@@ -136,13 +129,17 @@ const Input = styled.input`
     margin-bottom: 30px !important;
     background-color: #fff !important;
     color: #000;
-    max-width: 50%;
+    max-width: 60%;
     padding: 0 20px !important;
     opacity: 0.8;
     border: 1px solid #000 !important;
     &:focus {
         border: 1px solid #00b0d2 !important;
         box-shadow: none !important;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 84%;
     }
 `
 
@@ -152,14 +149,18 @@ const Question = styled.textarea`
     padding: 20px;
     color: #000;
     height: 150px;
-    max-width: calc(50% + 40px);
+    max-width: calc(60% + 40px);
     min-width: 30%;
     opacity: 0.8;
     border: 1px solid #000 !important;
     &:focus-visible {
         border: 1px solid #00b0d2 !important;
-        box-shadow: none!important;
+        box-shadow: none !important;
         outline: none !important;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: calc(84% + 40px);
     }
 `
 

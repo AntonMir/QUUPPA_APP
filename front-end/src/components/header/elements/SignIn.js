@@ -1,0 +1,34 @@
+// Link
+import { Link } from 'react-router-dom'
+// redux
+// import { store } from '@store/store.js'
+// import { changeAuthPageChosenForm } from '@store/actions.js'
+// styled
+import styled from 'styled-components'
+
+// const goToAuthPageLogin = () => {
+//     store.dispatch(changeAuthPageChosenForm('login'))
+// }
+
+// const goToAuthPageRegister = () => {
+//     store.dispatch(changeAuthPageChosenForm('register'))
+// }
+
+export default function SignIn() {
+    return <CustomLink to="/auth">Вход / Регистрация</CustomLink>
+}
+
+const CustomLink = styled(Link)`
+    margin: 0 45px 0px 10px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    &:hover {
+        border-bottom: 1px #000 solid;
+    }
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+`
