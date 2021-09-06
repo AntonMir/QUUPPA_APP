@@ -42,10 +42,6 @@ const ReqStyled = styled.li`
             transform: translateX(-98%);
         }
     }
-
-    @media (max-width: 1024px) {
-        display: none;
-    }
 `
 
 const CustomLink = styled(Link)`

@@ -4,8 +4,10 @@ import { store } from '@store/store.js'
 // components
 import AvalibleLang from '@header/elements/langChange/elements/AvaalibleLang.js'
 // img
-import languageSvg from '@img/header/language-white.svg'
-import arrowDown from '@img/header/arrow-down-white.svg'
+import languageSvg from '@img/header/language.svg'
+import languageSvgWhite from '@img/header/language-white.svg'
+import arrowDown from '@img/header/arrow-down.svg'
+import arrowDownWhite from '@img/header/arrow-down-white.svg'
 // styled
 import styled from 'styled-components'
 
@@ -13,17 +15,23 @@ const AvaalibleLangList = ['EN', 'RU']
 
 export default function LanguageChanger() {
     const [currentLang, setCurrentLang] = useState('RU')
+    const [burgerMenuIsOpen, setBurgerMenuIsOpen] = useState(false)
 
     store.subscribe(() => {
         setCurrentLang(store.getState().pageLanguage)
+        setBurgerMenuIsOpen(store.getState().burgerMenuIsOpen)
     })
 
     return (
-        <LangChangeWrapper>
+        <LangChangeWrapper
+            onClick={(event) => {
+                event.stopPropagation()
+            }}
+        >
             <CurrentLangWrapper to="/auth">
-                <LangImg src={languageSvg} alt="globus" />
+                <LangImg src={burgerMenuIsOpen ? languageSvg : languageSvgWhite} alt="globus" />
                 <CurrentLang>{currentLang}</CurrentLang>
-                <ArrowImg src={arrowDown} alt="arrowDown" />
+                <ArrowImg src={burgerMenuIsOpen ? arrowDown : arrowDownWhite} alt="arrowDown" />
             </CurrentLangWrapper>
             <AvailableLangList>
                 {AvaalibleLangList.map((lang) => {
@@ -39,10 +47,6 @@ export default function LanguageChanger() {
 
 const LangChangeWrapper = styled.div`
     position: relative;
-
-    @media (max-width: 1024px) {
-        display: none;
-    }
 `
 const CurrentLangWrapper = styled.div`
     display: flex;
@@ -73,11 +77,14 @@ const CurrentLang = styled.div`
     white-space: nowrap;
     z-index: 999;
     font-size: 13px;
+
+    @media (max-width: 991px) {
+        color: #000;
+    }
 `
 const LangImg = styled.img`
     width: 16px;
     height: auto;
-    fill: #fff;
 `
 const ArrowImg = styled.img`
     width: 10px;

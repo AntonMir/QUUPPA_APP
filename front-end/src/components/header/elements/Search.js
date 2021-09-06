@@ -17,10 +17,6 @@ const SearchStyled = styled.div`
     width: 5.5%;
     margin-right: 1%;
     cursor: pointer;
-
-    @media (max-width: 1024px) {
-        display: none;
-    }
 `
 
 const Img = styled.img`

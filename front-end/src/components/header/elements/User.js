@@ -24,10 +24,6 @@ const CustomLink = styled(Link)`
     align-items: center;
     user-select: none;
     margin: 0 20px;
-
-    @media (max-width: 1024px) {
-        display: none;
-    }
 `
 
 const ImgStyled = styled.img`

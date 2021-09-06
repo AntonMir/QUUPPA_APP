@@ -23,7 +23,7 @@ const CustomLink = styled(Link)`
     user-select: none;
     white-space: nowrap;
 
-    @media (max-width: 1024px) {
-        display: none;
+    @media (max-width: 991px) {
+        color: #000;
     }
 `

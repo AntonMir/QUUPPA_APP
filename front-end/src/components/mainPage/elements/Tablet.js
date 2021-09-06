@@ -36,8 +36,6 @@ const Tablet = () => {
         html.offsetHeight,
     )
 
-    console.log('---', 'height', height)
-
     // Параметр, зависящий от конечной высоты документа
     let chunk
     if (height <= 500) chunk = height / 150
@@ -96,22 +94,22 @@ const Tablet = () => {
 
 const TabletStyle = styled.div`
     position: fixed;
-    left: calc(53% - 630px);
+    left: calc(50% - 630px);
     top: 20%;
     width: calc(10vw + 200px);
     opacity: 0.25;
     z-index: -999;
 
     @media (max-width: 1600px) {
-        left: calc(60% - 630px);
+        left: calc(50% - 510px);
     }
     @media (max-width: 1200px) {
-        left: calc(68% - 630px);
+        left: calc(50% - 410px);
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
         left: calc(50% - 170px);
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
         left: calc(50% - 150px);
     }
     @media (max-width: 600px) {

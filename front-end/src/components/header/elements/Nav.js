@@ -8,21 +8,21 @@ export default function Nav() {
     return (
         <NavStyled>
             <NavList>
-                <div>
+                <NavElWrapper>
                     <NavEl className="header-nav-el">
                         <CustomLink to="/">Умное страхование</CustomLink>
                     </NavEl>
-                </div>
-                <div>
+                </NavElWrapper>
+                <NavElWrapper>
                     <NavEl className="header-nav-el">
                         <CustomLink to="/">О нас</CustomLink>
                     </NavEl>
-                </div>
-                <div>
+                </NavElWrapper>
+                <NavElWrapper>
                     <NavEl className="header-nav-el">
                         <CustomLink to="/">Форма для связи</CustomLink>
                     </NavEl>
-                </div>
+                </NavElWrapper>
             </NavList>
         </NavStyled>
     )
@@ -34,8 +34,9 @@ const NavStyled = styled.div`
     flex: 1;
     margin: 0 20px;
 
-    @media (max-width: 1024px) {
-        display: none;
+    @media (max-width: 991px) {
+        margin-top: 80px;
+        flex: 0;
     }
 `
 
@@ -45,6 +46,16 @@ const NavList = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;
+
+    @media (max-width: 991px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+`
+
+const NavElWrapper = styled.div`
+    height: initial;
 `
 
 const NavEl = styled.li`
@@ -78,10 +89,27 @@ const NavEl = styled.li`
             transform: translateX(-98%);
         }
     }
+
+    @media (max-width: 991px) {
+        margin: 0;
+        height: 40px;
+
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
 `
 
 const CustomLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    height: 100%;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+
+    @media (max-width: 991px) {
+        color: #000;
+    }
 `

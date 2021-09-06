@@ -24,6 +24,8 @@ export default function AuthPage() {
 
     store.subscribe(() => setChosenForm(store.getState().authPageChosenForm))
 
+    // console.log('---', 'chosenForm', chosenForm)
+
     return (
         <AuthPageStyled>
             <Logo />

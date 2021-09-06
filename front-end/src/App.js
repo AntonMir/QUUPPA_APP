@@ -26,7 +26,19 @@ export default function App() {
         window.onclick = (event) => {
             store.dispatch(changeBurgerMenu(false))
         }
-    })
+        // window.onresize = (event) => {
+        //     store.dispatch(changeBurgerMenu(false))
+        // }
+
+        return () => {
+            window.onclick = (event) => {
+                return
+            }
+            // window.onresize = (event) => {
+            //     return
+            // }
+        }
+    }, [])
 
     return (
         // AuthContext - является контекстом, но он должен быть обязательно провайдером

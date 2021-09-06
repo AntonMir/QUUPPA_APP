@@ -13,14 +13,17 @@ const topActive = {
     transform: 'skewY(45deg)',
     top: 'calc(50% - 1px)',
     height: '3px',
+    backgroundColor: '#000',
 }
 const middleActive = {
     opacity: 0,
+    backgroundColor: '#000',
 }
 const bottomActive = {
     transform: 'skewY(-45deg)',
     top: 'calc(50% - 1px)',
     height: '3px',
+    backgroundColor: '#000',
 }
 
 export default function BurgerBtn() {
@@ -34,8 +37,6 @@ export default function BurgerBtn() {
     store.subscribe(() => {
         setBurgerMenuIsOpen(store.getState().burgerMenuIsOpen)
     })
-
-    console.log('---', 'store.getState().burgerMenuIsOpen', store.getState().burgerMenuIsOpen)
 
     return (
         <BurgerBtnStyled onClick={changeBurgerMenuHandler} style={burgerMenuIsOpen ? BurgerBtnActive : {}}>
@@ -58,7 +59,7 @@ const BurgerBtnStyled = styled.div`
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
         display: block;
     }
 
@@ -66,7 +67,7 @@ const BurgerBtnStyled = styled.div`
         position: absolute;
         width: inherit;
         height: 2px;
-        background: #fff;
+        background-color: #fff;
         transition: all 0.3s ease;
     }
 `

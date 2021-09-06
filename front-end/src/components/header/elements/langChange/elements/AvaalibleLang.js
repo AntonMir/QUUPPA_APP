@@ -7,7 +7,7 @@ import styled from 'styled-components'
 export default function AvalibleLang(props) {
     const { lang } = props
 
-    const changeLanguageHandler = () => {
+    const changeLanguageHandler = (event) => {
         store.dispatch(changeLanguage(lang))
     }
 

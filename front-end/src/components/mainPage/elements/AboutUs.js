@@ -32,7 +32,7 @@ const PosFirstStyled = styled.div`
     padding: 0;
     margin-bottom: 50px;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
         flex-direction: column;
     }
 `
@@ -52,7 +52,7 @@ const Text = styled.div`
         margin: 0;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
         max-width: 100%;
         margin-bottom: 30px;
 
@@ -68,7 +68,7 @@ const Illustration = styled.div`
     justify-content: center;
     max-width: 49%;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
         max-width: 100%;
     }
 `

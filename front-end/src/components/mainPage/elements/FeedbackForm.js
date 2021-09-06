@@ -72,8 +72,6 @@ export default function FeedbackForm() {
         }
     }
 
-    console.log('---', 'RENDERED')
-
     return (
         <FeedbackFormStyled>
             <H1>Форма для связи</H1>
@@ -138,7 +136,7 @@ const Input = styled.input`
         box-shadow: none !important;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
         max-width: 84%;
     }
 `
@@ -159,7 +157,7 @@ const Question = styled.textarea`
         outline: none !important;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
         max-width: calc(84% + 40px);
     }
 `
