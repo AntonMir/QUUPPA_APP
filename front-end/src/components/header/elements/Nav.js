@@ -8,21 +8,15 @@ export default function Nav() {
     return (
         <NavStyled>
             <NavList>
-                <NavElWrapper>
-                    <NavEl className="header-nav-el">
-                        <CustomLink to="/">Умное страхование</CustomLink>
-                    </NavEl>
-                </NavElWrapper>
-                <NavElWrapper>
-                    <NavEl className="header-nav-el">
-                        <CustomLink to="/">О нас</CustomLink>
-                    </NavEl>
-                </NavElWrapper>
-                <NavElWrapper>
-                    <NavEl className="header-nav-el">
-                        <CustomLink to="/">Форма для связи</CustomLink>
-                    </NavEl>
-                </NavElWrapper>
+                <NavEl className="header-nav-el">
+                    <CustomLink to="/">Умное страхование</CustomLink>
+                </NavEl>
+                <NavEl className="header-nav-el">
+                    <CustomLink to="/">О нас</CustomLink>
+                </NavEl>
+                <NavEl className="header-nav-el">
+                    <CustomLink to="/">Форма для связи</CustomLink>
+                </NavEl>
             </NavList>
         </NavStyled>
     )
@@ -54,16 +48,12 @@ const NavList = styled.ul`
     }
 `
 
-const NavElWrapper = styled.div`
-    height: initial;
-`
-
 const NavEl = styled.li`
     position: relative;
     display: flex;
     align-items: center;
     padding: 0;
-    margin: 0 20px;
+    margin: 0 10px;
     cursor: pointer;
     user-select: none;
     white-space: nowrap;

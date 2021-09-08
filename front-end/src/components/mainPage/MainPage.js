@@ -1,8 +1,12 @@
 import React from 'react'
 // components
 import Tablet from '@mainPage/elements/Tablet.js'
-import WelcomeSection from '@mainPage/elements/WelcomeSection.js'
-import Possibilities from '@mainPage/elements/possibilities/Possibilities.js'
+import Greeting from '@mainPage/elements/Greeting.js'
+import Greeting2 from '@mainPage/elements/Greeting2.js'
+import Possibilities from '@mainPage/elements/Possibilities.js'
+import Possibilities2 from '@mainPage/elements/Possibilities2.js'
+import Mechanism from '@mainPage/elements/Mechanism.js'
+import Advantages from '@mainPage/elements/Advantages.js'
 import AboutUs from '@mainPage/elements/AboutUs.js'
 import FeedbackForm from '@mainPage/elements/FeedbackForm.js'
 // styled
@@ -12,8 +16,12 @@ export default function MainPage() {
     return (
         <Main>
             <Tablet />
-            <WelcomeSection />
+            <Greeting />
+            <Greeting2 />
             <Possibilities />
+            <Possibilities2 />
+            <Mechanism />
+            <Advantages />
             <AboutUs />
             <FeedbackForm />
         </Main>

@@ -34,7 +34,6 @@ const CustomLink = styled(Link)`
     user-select: none;
     height: 80px;
     z-index: 9999;
-    transition: height 0.3s linear;
 
     @media (max-width: 1200px) {
         height: 70px;
