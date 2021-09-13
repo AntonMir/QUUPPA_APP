@@ -3,16 +3,13 @@ import React, { useState } from 'react'
 import Login from '@components/authPage/elements/Login.js'
 import Register from '@components/authPage/elements/Register.js'
 import Logo from '@components/authPage/elements/Logo.js'
-
-// redux
-import { store } from '@store/store.js'
 // img
 import wave from '@img/authPage/wave.svg'
 // styled
 import styled from 'styled-components'
 
 export default function AuthPage() {
-    const [chosenForm, setChosenForm] = useState(store.getState().authPageChosenForm)
+    const [chosenForm, setChosenForm] = useState('login')
 
     const choseLogin = () => {
         setChosenForm('login')
@@ -21,10 +18,6 @@ export default function AuthPage() {
     const choseRegister = () => {
         setChosenForm('register')
     }
-
-    store.subscribe(() => setChosenForm(store.getState().authPageChosenForm))
-
-    // console.log('---', 'chosenForm', chosenForm)
 
     return (
         <AuthPageStyled>

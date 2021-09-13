@@ -14,9 +14,11 @@ export default function Logo() {
 }
 
 const CustomLink = styled(Link)`
+    position: relative;
     flex: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 15px;
     text-decoration: none;
     user-select: none;
@@ -25,6 +27,6 @@ const CustomLink = styled(Link)`
 
 const IMG = styled.img`
     width: auto;
-    height: 45%;
-    margin-right: 10px;
+    height: 75%;
+    moz-height: 40% !important;
 `
