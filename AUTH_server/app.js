@@ -8,6 +8,8 @@ const app = express()
 
 const port = process.env.PORT || config.get('port') || 8000
 
+app.use(cors(config.get('corsOptions')))
+
 app.use(express.json({ extended: true }))
 
 app.use('/api/auth', require('@routes/auth.routes.js'))

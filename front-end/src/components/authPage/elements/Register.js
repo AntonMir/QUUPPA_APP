@@ -4,6 +4,8 @@ import { useHttp } from '@hooks/http.hook.js'
 import { useMessage } from '@hooks/message.hook.js'
 // context
 import { AuthContext } from '@src/context/AuthContext.js'
+// config
+import config from '@config/config.js'
 // styled
 import styled from 'styled-components'
 
@@ -38,10 +40,10 @@ export default function Register() {
     const registerHandler = async () => {
         try {
             // регистрируемся
-            const regData = await request('/api/auth/register', 'POST', { ...form })
+            const regData = await request(`${config.AuthServerURL}/api/auth/register`, 'POST', { ...form })
             message(regData.message)
             // если зарегались успешно, сразу вхдим
-            const loginData = await request('/api/auth/login', 'POST', { ...form })
+            const loginData = await request(`${config.AuthServerURL}/api/auth/login`, 'POST', { ...form })
             auth.login(loginData.token, loginData.userId, loginData.userName)
         } catch (e) {}
     }

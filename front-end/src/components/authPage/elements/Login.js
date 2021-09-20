@@ -4,6 +4,8 @@ import { useHttp } from '@hooks/http.hook.js'
 import { useMessage } from '@hooks/message.hook.js'
 // context
 import { AuthContext } from '@src/context/AuthContext.js'
+// config
+import config from '@config/config.js'
 // styled
 import styled from 'styled-components'
 
@@ -37,7 +39,7 @@ export default function Login() {
     // при авторизации
     const loginHandler = async () => {
         try {
-            const data = await request('/api/auth/login', 'POST', { ...form })
+            const data = await request(`${config.AuthServerURL}/api/auth/login`, 'POST', { ...form })
             auth.login(data.token, data.userId, data.userName)
         } catch (e) {}
     }

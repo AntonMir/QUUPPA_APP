@@ -1,5 +1,9 @@
 {
     "port": 8000,
+    "corsOptions": {
+        "origin": "http://xn--80aafm4ag3b.xn--p1ai",
+        "optionsSuccessStatus": 200
+    },
     "jwtSecret": "some random phrase",
     "mongoUri": "mongodb+srv://admin:Qwerty12@avtelmacluster0.seqhv.mongodb.net/AVTelmaAuthDB?retryWrites=true&w=majority"
 }

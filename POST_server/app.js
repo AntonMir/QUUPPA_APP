@@ -8,7 +8,6 @@ const app = express()
 
 const port = process.env.PORT || config.get('port') || 7000
 
-// cors gives access to http://localhost:3000 (front-end)
 app.use(cors(config.get('corsOptions')))
 
 app.use(express.json({ extended: true }))
