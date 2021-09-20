@@ -20,11 +20,10 @@ router.post('/', [check('email', 'Некорректный email').isEmail()], a
         console.log('--------------------------------------')
 
         const userData = await req.body
-        console.log('userData', userData)
 
         if (!isEmptyObject(userData)) {
             sendEmail(config.get('emailReceiver'), userData)
-            console.log('---', 'объект пуст')
+            console.log('userData', userData)
         }
 
         res.status(200).json({ message: 'Спасибо за обратную связь! Ваше сообщение отправлено!' })
