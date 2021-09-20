@@ -2,6 +2,7 @@ const express = require('express')
 const config = require('config')
 const mongoose = require('mongoose')
 const chalk = require('chalk')
+var cors = require('cors')
 require('module-alias/register')
 
 const app = express()
