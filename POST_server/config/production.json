@@ -1,9 +1,8 @@
 {
     "port": 7000,
     "corsOptions": {
-        "origin": "http://example.com",
+        "origin": ["http://xn--80aafm4ag3b.xn--p1ai", "http://localhost:3000"],
         "optionsSuccessStatus": 200
-    }
+    },
+    "emailReceiver": "insuran7test2@mail.ru"
 }
-
-
