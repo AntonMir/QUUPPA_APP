@@ -15,7 +15,7 @@ export default function Advantages() {
                     </ul>
                 </Text>
                 <Illustration>
-                    <Img src="http://placehold.it/550x300" alt="Possibilities" />
+                    <Img src="https://via.placeholder.com/550x300" alt="Possibilities" />
                 </Illustration>
             </AdvantagesEl>
         </AdvantagesStyled>

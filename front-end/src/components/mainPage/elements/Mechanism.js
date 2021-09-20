@@ -17,7 +17,7 @@ export default function Mechanism() {
                     </ul>
                 </Text>
                 <Illustration>
-                    <Img src="http://placehold.it/550x300" alt="Possibilities" />
+                    <Img src="https://via.placeholder.com/550x300" alt="Possibilities" />
                 </Illustration>
             </MechanismEl>
         </MechanismStyled>

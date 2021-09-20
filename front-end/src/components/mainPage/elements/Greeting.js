@@ -13,7 +13,7 @@ export default function Greeting() {
             </Text>
 
             <Illustration>
-                <Img src="http://placehold.it/550x300" alt="greeting" />
+                <Img src="https://via.placeholder.com/550x300" alt="greeting" />
             </Illustration>
         </GreetingStyled>
     )

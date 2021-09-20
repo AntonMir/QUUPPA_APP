@@ -28,5 +28,4 @@ const CustomLink = styled(Link)`
 const IMG = styled.img`
     width: auto;
     height: 75%;
-    moz-height: 40% !important;
 `
