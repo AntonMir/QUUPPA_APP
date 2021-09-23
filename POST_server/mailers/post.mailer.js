@@ -18,7 +18,7 @@ function sendEmail(receiver, userData) {
     // open smtp channel
     const smtpTransport = nodemailer.createTransport({
         host: 'smtp.mail.ru',
-        port: 587, // or 25(none secure) or 465(secure)
+        port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
             user: 'insuran7test@mail.ru',

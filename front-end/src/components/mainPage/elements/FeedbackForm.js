@@ -84,7 +84,7 @@ export default function FeedbackForm() {
                 onChange={changeUserData}
             />
             <Input
-                placeholder="Email"
+                placeholder="Почтовый ящик"
                 id="feedback-email"
                 type="text"
                 name="email"
@@ -92,7 +92,7 @@ export default function FeedbackForm() {
                 onChange={changeUserData}
             />
             <Question
-                placeholder="Question"
+                placeholder="Ваш вопрос"
                 id="feedback-question"
                 type="text"
                 name="question"
@@ -168,13 +168,17 @@ const Button = styled.button`
     font-size: 20px;
     color: #fff;
     background-color: #091f2c;
+    box-shadow: 0 0 5px #000;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     &:focus {
-        background-color: rgba(00, 00, 00, 0) !important;
+        background-color: #091f2c;
+    }
+    &:active {
+        box-shadow: 0 0 1px #000;
     }
     &:disabled {
         opacity: 0.5;

@@ -15,15 +15,14 @@ router.post('/', [check('email', 'Некорректный email').isEmail()], a
                 message: 'Некорректный email',
             })
         }
-        console.log('------------- REQ BODY ---------------')
-        console.log(req.body)
-        console.log('--------------------------------------')
 
         const userData = await req.body
 
         if (!isEmptyObject(userData)) {
             sendEmail(config.get('emailReceiver'), userData)
-            console.log('userData', userData)
+            console.log('------------- User Data ---------------')
+            console.log(userData)
+            console.log('---------------------------------------')
         }
 
         res.status(200).json({ message: 'Спасибо за обратную связь! Ваше сообщение отправлено!' })
